@@ -67,6 +67,8 @@ model Orders {
   amoutMoney     String
   address        String
   created_at     DateTime  @default(now())
+  pixType        String?
+  paymentVoucher String?
   dataCompanies  Companies @relation(fields: [companiesId], references: [id], onDelete: Cascade)
   companiesId    String
   client         Clients   @relation(fields: [clientsId], references: [id], onDelete: Cascade)
@@ -93,5 +95,4 @@ model OrdersFinished {
   amountvalue  Int
   companyId    String
   created_at   DateTime @default(now())
-
 }
